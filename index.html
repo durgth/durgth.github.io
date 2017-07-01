@@ -1,63 +1,23 @@
 <!DOCTYPE html>
 <html>
-
-<dom-module id="svg-container">
-  <template>
-    <svg id="svg" version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>
-    <content select="svg-component"></content>
-  </template>
-
-  <script>
-    Polymer({
-      is: 'svg-container',
-
-      attached: function() {
-        for (var i = 0; i < this.attributes.length; i++) {
-          this.$.svg.setAttribute(Polymer.CaseMap.dashToCamelCase(this.attributes[i].name), this.attributes[i].value);
-        }
-      }
-    });
-  </script>
+<link rel="import" href="../bower_components/polymer-svg-template/polymer-svg-template.html"/>
+<dom-module id="my-svg-template">
+    <template>
+    	<svg>
+    		<template is="dom-if" if="[[_condition]]">
+    			...
+    		</template>
+    	</svg>
+    </template>
 </dom-module>
-	
-<dom-module id="svg-component">
-  <template>
-    <content select="svg-component"></content>
-  </template>
-  <script>
-    SvgComponent = Polymer({
-      is: 'svg-component',
-
-      _node: {},
-      _namespace: 'http://www.w3.org/2000/svg',
-
-      get rootElement () {
-        if (this.parentNode.nodeName === 'SVG-CONTAINER')
-          return this.parentNode.$.svg;
-        else
-          return this.parentNode._node;
-      },
-
-      factoryImpl: function(attributes) {
-        for (var key in attributes)
-          this.setAttribute(key, attributes[key]);
-      },
-
-      attached: function() {
-        var is = this.attributes.is.value;
-
-        if (is !== undefined) {
-          this._node = document.createElementNS(this._namespace, is);
-          for (var i = 0; i < this.attributes.length; i++) {
-            if (this.attributes[i].name !== 'is')
-              this._node.setAttribute(this.attributes[i].name, this.attributes[i].value);
-          }
-          this.rootElement.appendChild(this._node);
-        }
-      }
-    });
-  </script>
-</dom-module>
+<script>
+   //  Polyfill all <template> elements inside of any <svg> container within
+   PolymerSvgTemplate('my-svg-template');
+	Polymer({
+		is: 'my-svg-template'
+		...
+	})
+</script>
 
 <title>iGene108</title>
 
