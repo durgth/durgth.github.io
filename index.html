@@ -1,6 +1,45 @@
 <!DOCTYPE html>
 <html>
 
+<dom-module id="svg-component">
+  <template>
+    <content select="svg-component"></content>
+  </template>
+  <script>
+    SvgComponent = Polymer({
+      is: 'svg-component',
+
+      _node: {},
+      _namespace: 'http://www.w3.org/2000/svg',
+
+      get rootElement () {
+        if (this.parentNode.nodeName === 'SVG-CONTAINER')
+          return this.parentNode.$.svg;
+        else
+          return this.parentNode._node;
+      },
+
+      factoryImpl: function(attributes) {
+        for (var key in attributes)
+          this.setAttribute(key, attributes[key]);
+      },
+
+      attached: function() {
+        var is = this.attributes.is.value;
+
+        if (is !== undefined) {
+          this._node = document.createElementNS(this._namespace, is);
+          for (var i = 0; i < this.attributes.length; i++) {
+            if (this.attributes[i].name !== 'is')
+              this._node.setAttribute(this.attributes[i].name, this.attributes[i].value);
+          }
+          this.rootElement.appendChild(this._node);
+        }
+      }
+    });
+  </script>
+</dom-module>
+
 <title>iGene108</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -153,7 +192,7 @@ body, html {
  	</div>
   </div>
 </div>
-
+  <a href="#home" class="w3-btn w3-padding w3-light-grey w3-hover-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
 
 
 
@@ -210,7 +249,7 @@ The Code Beyond the Code: How do epigenetics affect my health?<br>
 
 </div>
 
-
+  <a href="#home" class="w3-btn w3-padding w3-light-grey w3-hover-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
 
 
 
@@ -232,7 +271,7 @@ The Code Beyond the Code: How do epigenetics affect my health?<br>
    
 </div>
 </div>
-
+  <a href="#home" class="w3-btn w3-padding w3-light-grey w3-hover-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
 
 
 
@@ -298,7 +337,7 @@ The Code Beyond the Code: How do epigenetics affect my health?<br>
   </div>
 </div>
 
-
+  <a href="#home" class="w3-btn w3-padding w3-light-grey w3-hover-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
 
 
 
@@ -394,7 +433,7 @@ You can send us a message through the “Contact Us” form on our website. We a
 
 
 </div>
-
+  <a href="#home" class="w3-btn w3-padding w3-light-grey w3-hover-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
 
 
 
@@ -444,7 +483,7 @@ You can send us a message through the “Contact Us” form on our website. We a
   </div>
 </div>
 
-
+  <a href="#home" class="w3-btn w3-padding w3-light-grey w3-hover-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
 
 
 
