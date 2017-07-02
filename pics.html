@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<dom-module id="svg-component">
+  <template>
+    <content select="svg-component"></content>
+  </template>
+  <script>
+    SvgComponent = Polymer({
+      is: 'svg-component',
+      _node: {},
+      _namespace: 'http://www.w3.org/2000/svg',
+      get rootElement () {
+        if (this.parentNode.nodeName === 'SVG-CONTAINER')
+          return this.parentNode.$.svg;
+        else
+          return this.parentNode._node;
+      },
+      factoryImpl: function(attributes) {
+        for (var key in attributes)
+          this.setAttribute(key, attributes[key]);
+      },
+      attached: function() {
+        var is = this.attributes.is.value;
+        if (is !== undefined) {
+          this._node = document.createElementNS(this._namespace, is);
+          for (var i = 0; i < this.attributes.length; i++) {
+            if (this.attributes[i].name !== 'is')
+              this._node.setAttribute(this.attributes[i].name, this.attributes[i].value);
+          }
+          this.rootElement.appendChild(this._node);
+        }
+      }
+    });
+  </script>
+</dom-module>
+
+<title>img</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+/* Full height image header */
+.bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image: url("img/bay.png");
+    min-height: 100%;
+}
+.w3-navbar li a {
+    padding: 16px;
+    float: left;
+}
+</style>
+
+
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <ul class="w3-navbar w3-white w3-card-2" id="myNavbar">
+    <li>
+      <a href="#home" class="w3-wide"><img src="img/igene108_small.png"></a>
+    </li>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+    <a href="#home"><i class="fa fa-home"></i> HOME   </a>
+      <a href="#mission"><i class="fa fa-heart"></i> MISSION   </a>
+    	<a href="#service"><i class="fa fa-star"></i> SERVICES   </a>
+      <a href="#secure"><i class="fa fa-lock"></i> SECURE   </a>
+     <a href="#plans"><i class="fa fa-usd"></i> PLANS   </a>
+    <a href="#faq"><i class="fa fa-question"></i> FAQ   </a>
+      <a href="#team"><i class="fa fa-user"></i> ABOUT   </a>
+      <a href="#contact"><i class="fa fa-envelope"></i> CONTACT   </a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    <li>
+      <a href="javascript:void(0)" class="w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+        <i class="fa fa-bars w3-padding-right w3-padding-left"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- Sidenav on small screens when clicking the menu icon -->
+<nav class="w3-sidenav w3-black w3-card-2 w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidenav">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-large w3-padding-16"><i class="fa fa-close"></i>Close</a>
+  <a href="#home" onclick="w3_close()>"><i class="fa fa-home"></i>  HOME</a>
+  <a href="#mission" onclick="w3_close()"><i class="fa fa-heart"></i>  MISSION</a>
+ <a href="#service" onclick="w3_close()"><i class="fa fa-star"></i>  SERVICES</a>
+  <a href="#secure" onclick="w3_close()"><i class="fa fa-lock"></i>  SECURE</a>
+  <a href="#plans" onclick="w3_close()"><i class="fa fa-usd"></i>  PLANS</a>
+<a href="#faq" onclick="w3_close()"><i class="fa fa-question"></i>  FAQ</a>
+  <a href="#team" onclick="w3_close()"><i class="fa fa-user"></i>  ABOUT</a>
+  <a href="#contact" onclick="w3_close()"><i class="fa fa-envelope"></i>  CONTACT</a>
+</nav>
+
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-off" id="home">
+  <div class="w3-display-left w3-padding-xxlarge w3-text-black">
+    <span class="w3-jumbo w3-hide-small"></span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium"></span><br>
+    <span class="w3-large"></span>
+    <h6> A unique brand of education and DNA testing </h6>
+    <h5 class="w3-xlarge w3-animate-opacity">LIVE. LEARN. TOGETHER.</h5>
+    
+    <p><a href="#mission" class="w3-btn w3-green w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more and start today</a></p>
+  </div> 
+  
+  <div class="w3-display-bottomleft w3-padding-xxlarge w3-text-grey w3-large">
+
+<!-- 
+    <a href="#home" class="w3-hover-text-white"><i class="fa fa-facebook-official"></i></a>
+    <a href="#home" class="w3-hover-text-white"><i class="fa fa-flickr"></i></a>
+    <a href="#home" class="w3-hover-text-white"><i class="fa fa-instagram"></i></a>
+    <a href="#home" class="w3-hover-text-white"><i class="fa fa-twitter"></i></a>
+    <a href="#home" class="w3-hover-text-white"><i class="fa fa-linkedin"></i></a>
+ -->
+
+  </div>
+  
+</header>
+
+
+
+
+
+<!-- Mission Section -->
+<div class="w3-container w3-padding-128" id="mission">
+
+<img src="img/2.png" alt="iGene108" style="width:100%">
+<img src="img/4.png" alt="iGene108" style="width:100%">
+<img src="img/5.png" alt="iGene108" style="width:100%">
+<img src="img/8.png" alt="iGene108" style="width:100%">
+<img src="img/9.png" alt="iGene108" style="width:100%">
+<img src="img/10.png" alt="iGene108" style="width:100%">
+<img src="img/11.png" alt="iGene108" style="width:100%">
+<img src="img/14.png" alt="iGene108" style="width:100%">
+<img src="img/15.png" alt="iGene108" style="width:100%">
+<img src="img/16.png" alt="iGene108" style="width:100%">
+<img src="img/17.png" alt="iGene108" style="width:100%">
+<img src="img/18.png" alt="iGene108" style="width:100%">
+<img src="img/19.png" alt="iGene108" style="width:100%">
+<img src="img/21.png" alt="iGene108" style="width:100%">
+<img src="img/22.png" alt="iGene108" style="width:100%">
+<img src="img/24.png" alt="iGene108" style="width:100%">
+<img src="img/25.png" alt="iGene108" style="width:100%">
+<img src="img/27.png" alt="iGene108" style="width:100%">
+<img src="img/30.png" alt="iGene108" style="width:100%">
+<img src="img/beach.png" alt="iGene108" style="width:100%">
+<img src="img/plans.png" alt="iGene108" style="width:100%">
+<img src="img/services.png" alt="iGene108" style="width:100%">
+<img src="img/sunrise.png" alt="iGene108" style="width:100%">
+<img src="img/team.png" alt="iGene108" style="width:100%">
+<img src="img/unsecure.png" alt="iGene108" style="width:100%">
+<img src="img/winter.png" alt="iGene108" style="width:100%">
+<img src="img/yoga.png" alt="iGene108" style="width:100%">
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
