@@ -3,6 +3,29 @@
 <title>Saleboat</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+.w3-sidenav {
+	text-decoration:none!important
+	height:100%;width:200px;background-color:#fff;position:fixed!important;z-index:1;overflow:auto
+}
+.w3-sidenav a {
+	-webkit-transition:background-color .25s,color .15s,box-shadow .25s,opacity 0.25s,filter 0.25s,border 0.15s;transition:background-color .25s,color .15s,box-shadow .15s,opacity .25s,filter .25s,border .15s
+	padding:4px 2px 4px 16px
+}
+.w3-sidenav .w3-dropdown-hover:hover,.w3-sidenav .w3-dropdown-hover:first-child,.w3-sidenav .w3-dropdown-click:hover,.w3-dropnav a:hover{
+	background-color:#ccc;color:#000
+}
+.w3-sidenav .w3-dropdown-hover,.w3-sidenav .w3-dropdown-click,.w3-bar-block .w3-dropdown-hover,.w3-bar-block .w3-dropdown-click{
+	width:100%
+}
+.w3-sidenav .w3-dropdown-hover .w3-dropdown-content,.w3-sidenav .w3-dropdown-click .w3-dropdown-content,.w3-bar-block .w3-dropdown-hover .w3-dropdown-content,.w3-bar-block .w3-dropdown-click .w3-dropdown-content{
+	min-width:100%
+}
+@media (max-width:992px){.w3-sidenav.w3-collapse,.w3-sidebar.w3-collapse{display:none}.w3-main{margin-left:0!important;margin-right:0!important}}
+
+</style>
+
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -11,54 +34,69 @@ body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
 body {font-size: 16px;}
 img {margin-bottom: -8px;}
 .mySlides {display: none;}
-</style>
-<body class="w3-content w3-black" style="max-width:1500px;">
 
+</style>
+
+<body class="w3-content w3-white" style="max-width:1500px;">
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <ul class="w3-navbar w3-white w3-card-2" id="myNavbar">
-<!--
-    <div class="w3-left">
-      <a href="#home" class="w3-wide"><img src="appImages/logo-small.jpg" alt="Saleboat"></a>
+    <div class="w3-left w3-hide-small">
+      <a href="#home" class="w3-wide"><img src="appImages/logo-tiny.jpg" alt="Saleboat"></a>
     </div>
--->
     
     <!-- Right-sided navbar links -->
-    <div class="w3-right w3-hide-small">
-    	<a href="#home"><i class="fa fa-home"></i> HOME   </a>
-      	<a href="#app"><i class="fa fa-cloud"></i> APP   </a>
-    	<a href="#features"><i class="fa fa-star"></i> FEATURES   </a>
-    	<a href="#delivery"><i class="fa fa-truck"></i> DELIVERY   </a>
-     	<a href="#about"><i class="fa fa-user"></i> ABOUT   </a>
-     	<a href="https://goo.gl/forms/OASSwHUqsD8gXOn12"><i class="fa fa-envelope"></i>  SUBSCRIBE </a>
+    <div class="w3-right w3-hide-small w3-background-white w3-text-white">
+		<span style="background-color: navy">
+			<a href="#home"><i class="fa fa-home"></i> HOME   </a>
+			<a href="#app"><i class="fa fa-cloud"></i> APP   </a>
+			<a href="#features"><i class="fa fa-star"></i> FEATURES   </a>
+			<a href="#delivery"><i class="fa fa-truck"></i> DELIVERY   </a>
+			<a href="#about"><i class="fa fa-user"></i> ABOUT   </a>
+			<a href="https://goo.gl/forms/OASSwHUqsD8gXOn12"><i class="fa fa-envelope"></i>  SUBSCRIBE </a>
+		</span>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-    <a href="javascript:void(0)" class="w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-        <i class="fa fa-bars w3-padding-right w3-padding-left"></i>
+    <a href="javascript:void(0)" class="w3-right w3-hide-large w3-hide-medium w3-text-white" onclick="w3_open()">
+        <span style="background-color: navy">
+        	<i class="fa fa-bars w3-padding-right w3-padding-left"></i>
+        </span>
     </a>
   </ul>
 </div>
 
+
 <!-- Sidenav on small screens when clicking the menu icon -->
-<nav class="w3-sidenav w3-black w3-card-2 w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidenav">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-large w3-padding-16"><i class="fa fa-close"></i>Close</a>
-  <a href="#home" onclick="w3_close()>"><i class="fa fa-home"></i>  HOME</a>
-  <a href="#app" onclick="w3_close()"><i class="fa fa-cloud"></i>  APP</a>
-  <a href="#features" onclick="w3_close()"><i class="fa fa-star"></i>  FEATURES</a>
-  <a href="#delivery" onclick="w3_close()"><i class="fa fa-truck"></i>  DELIVERY</a>
-  <a href="#about" onclick="w3_close()"><i class="fa fa-user"></i>  ABOUT</a>
+<nav class="w3-sidenav w3-indigo w3-card-2 w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidenav">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-large w3-padding-16"><i class="fa fa-close"></i>Close</a><br>
+  <a href="#home" onclick="w3_close()>"><i class="fa fa-home"></i>  HOME</a><br>
+  <a href="#app" onclick="w3_close()"><i class="fa fa-cloud"></i>  APP</a><br>
+  <a href="#features" onclick="w3_close()"><i class="fa fa-star"></i>  FEATURES</a><br>
+  <a href="#delivery" onclick="w3_close()"><i class="fa fa-truck"></i>  DELIVERY</a><br>
+  <a href="#about" onclick="w3_close()"><i class="fa fa-user"></i>  ABOUT</a><br>
   <a href="https://goo.gl/forms/OASSwHUqsD8gXOn12" onclick="w3_close()"><i class="fa fa-envelope"></i>  SUBSCRIBE </a>
 </nav>
 
 
 
-<!-- Header with Slideshow -->
-<header class="w3-display-container w3-center w3-white" id="home">
-  <a href="https://goo.gl/forms/OASSwHUqsD8gXOn12" class="w3-button w3-block w3-red w3-round w3-hide-large w3-hide-medium"><i class="fa fa-envelope"></i>   Subscribe Now</a>
-  <div class="mySlides w3-animate-opacity">
+
+
+<!-- Header -->
+
+<header>
+
+</header>
+
+<!-- Slideshow (in body to avoid conflict with menu bar) -->
+
+
+<div class="w3-display-container w3-center w3-white" id="home">  
+<!-- large and medium screens: -->
+  
+  <div class="mySlides w3-animate-opacity w3-hide-small">
     <img class="w3-image" src="appImages/app.jpg" alt="Image 1" style="min-width:500px" width="1500" height="1000">
-    <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
+    <div class="w3-display-left w3-padding" style="width:35%">
       <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
         <h1 class="w3-xlarge w3-text-red">Sell Your Stuff & Get Paid Instantly</h1>
         <hr class="w3-opacity">
@@ -67,20 +105,20 @@ img {margin-bottom: -8px;}
       </div>
     </div>
   </div>
-  <div class="mySlides w3-animate-opacity">
+  <div class="mySlides w3-animate-opacity w3-hide-small">
     <img class="w3-image" src="appImages/app2.jpg" alt="Image 2" style="min-width:500px" width="1500" height="1000">
-    <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
+    <div class="w3-display-left w3-padding" style="width:35%">
       <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
-        <h1 class="w3-xlarge w3-text-indigo">Buy & Get Purchases Delivered</h1>
+        <h1 class="w3-xlarge w3-text-indigo">Shop & Get Purchases Delivered</h1>
         <hr class="w3-opacity">
         <p>Buy an item, relax & let us take care of the pickup and delivery, right to your door.</p>
         <p><a href="https://goo.gl/forms/OASSwHUqsD8gXOn12" class="w3-button w3-block w3-indigo w3-round"><i class="fa fa-envelope"></i>   Subscribe Now</a></p>
       </div>
     </div>
   </div>
-  <div class="mySlides w3-animate-opacity">
+  <div class="mySlides w3-animate-opacity w3-hide-small">
     <img class="w3-image" src="appImages/app4.jpg" alt="Image 3" style="min-width:500px" width="1500" height="1000">
-    <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
+    <div class="w3-display-left w3-padding" style="width:35%">
       <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
         <h1 class="w3-xlarge w3-text-green">Make Some Extra Cash</h1>
         <hr class="w3-opacity">
@@ -90,8 +128,39 @@ img {margin-bottom: -8px;}
     </div>
   </div>
   <a class="w3-button w3-black w3-display-right w3-margin-right w3-round w3-hide-small w3-hover-light-grey" onclick="plusDivs(1)">Take Tour <i class="fa fa-angle-right"></i></a>
-  <a class="w3-button w3-block w3-black w3-hide-large w3-hide-medium" onclick="plusDivs(1)">Take Tour <i class="fa fa-angle-right"></i></a>
-</header>
+  
+  <div class="w3-hide-medium w3-hide-large">
+    <div class="mySlidesSmall">
+		<img class="w3-image" src="appImages/app.jpg" alt="Image 1" style="min-width:500px" width="1500" height="1000">
+		<h1 class="w3-xlarge w3-text-red">Sell Your Stuff & Get Paid Instantly</h1>
+		<p>Sell an item and get paid for it all in the same app.</p>
+		<div class = "w3-center">
+  			<a class="w3-button w3-red w3-round w3-hide-large w3-hide-medium" onclick="plusDivsSmall(1)">Take Tour <i class="fa fa-angle-right"></i></a>
+  			<a href="https://goo.gl/forms/OASSwHUqsD8gXOn12" class="w3-button w3-green w3-round w3-hide-large w3-hide-medium"><i class="fa fa-envelope"></i>   Subscribe Now</a>
+ 		</div>
+  	</div>
+  	
+  	<div class="mySlidesSmall">
+		<img class="w3-image" src="appImages/app2.jpg" alt="Image 2" style="min-width:500px" width="1500" height="1000">
+		<h1 class="w3-xlarge w3-text-indigo">Shop & Get Purchases Delivered</h1>
+		<p>Buy an item, relax & let us take care of the pickup and delivery, right to your door.</p>
+		<div class = "w3-center">
+  			<a class="w3-button w3-indigo w3-round w3-hide-large w3-hide-medium" onclick="plusDivsSmall(1)">Take Tour <i class="fa fa-angle-right"></i></a>
+  			<a href="https://goo.gl/forms/OASSwHUqsD8gXOn12" class="w3-button w3-green w3-round w3-hide-large w3-hide-medium"><i class="fa fa-envelope"></i>   Subscribe Now</a>
+ 		</div>
+  	</div>
+
+  	<div class="mySlidesSmall">
+		<img class="w3-image" src="appImages/app4.jpg" alt="Image 3" style="min-width:500px" width="1500" height="1000">
+		<h1 class="w3-xlarge w3-text-green">Make Some Extra Cash</h1>
+		<p>Make a delivery on your way and get paid for it.</p>
+		<div class = "w3-center">
+  			<a class="w3-button w3-green w3-round w3-hide-large w3-hide-medium" onclick="plusDivsSmall(1)">Take Tour <i class="fa fa-angle-right"></i></a>
+  			<a href="https://goo.gl/forms/OASSwHUqsD8gXOn12" class="w3-button w3-yellow w3-round w3-hide-large w3-hide-medium"><i class="fa fa-envelope"></i>   Subscribe Now</a>
+ 		</div>
+  	</div>
+  </div>
+</div>
 
 <!-- The App Section -->
 <div class="w3-padding-64 w3-white" id="app">
@@ -246,42 +315,43 @@ img {margin-bottom: -8px;}
 </div>
 
 <!-- Footer -->
-<footer class="w3-container w3-padding-32 w3-white w3-center w3-xlarge">
+<footer class="w3-container w3-padding-32 w3-white w3-center w3-large">
 
 <div class="w3-center">
-	<img src="appImages/logo-small.jpg" alt="Saleboat">
-	<br><br>
+	<img src="appImages/logo-small.jpg" alt="Saleboat"><br>
 	<a href="#home"><i class="fa fa-home"></i> HOME   </a>
     <a href="#app"><i class="fa fa-cloud"></i> APP   </a>
 	<a href="#features"><i class="fa fa-star"></i> FEATURES   </a>
     <a href="#delivery"><i class="fa fa-truck"></i> DELIVERY   </a>
     <a href="#about"><i class="fa fa-user"></i> ABOUT   </a>
-    <a href="https://goo.gl/forms/OASSwHUqsD8gXOn12"><i class="fa fa-envelope"></i>  SUBSCRIBE </a>
+    <a href="https://goo.gl/forms/OASSwHUqsD8gXOn12"><i class="fa fa-envelope"></i>  SUBSCRIBE </a> <br>
 
+	<div class="w3-xlarge">
+		<i class="fa fa-facebook-official w3-hover-opacity"></i>
+		<i class="fa fa-instagram w3-hover-opacity"></i>
+		<i class="fa fa-snapchat w3-hover-opacity"></i>
+		<i class="fa fa-pinterest-p w3-hover-opacity"></i>
+		<i class="fa fa-twitter w3-hover-opacity"></i>
+		<i class="fa fa-linkedin w3-hover-opacity"></i>
+	</div>
 </div>
 
 <!-- 
-  <div class="w3-section">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-  </div>
   <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p> 
 template https://www.w3schools.com/w3css/tryw3css_templates_app_launch.htm
-try it out at https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_app_launch&stacked=h-->
-
+try it out at https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_app_launch&stacked=h
+-->
 </footer>
 
 <script>
 // Slideshow
 var slideIndex = 1;
 showDivs(slideIndex);
+
 function plusDivs(n) {
   showDivs(slideIndex += n);
 }
+
 function showDivs(n) {
   var i;
   var x = document.getElementsByClassName("mySlides");
@@ -292,9 +362,28 @@ function showDivs(n) {
   }
   x[slideIndex-1].style.display = "block";  
 }
-</script>
 
-<script>
+
+//Slideshow for small
+var slideIndexSmall = 1;
+showDivsSmall(slideIndexSmall);
+
+function plusDivsSmall(n) {
+  showDivsSmall(slideIndexSmall += n);
+}
+
+function showDivsSmall(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlidesSmall");
+  if (n > x.length) {slideIndexSmall = 1}    
+  if (n < 1) {slideIndexSmall = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndexSmall-1].style.display = "block";  
+}
+
+
 // Modal Image Gallery
 function onClick(element) {
   document.getElementById("img01").src = element.src;
@@ -302,6 +391,8 @@ function onClick(element) {
   var captionText = document.getElementById("caption");
   captionText.innerHTML = element.alt;
 }
+
+
 // Toggle between showing and hiding the sidenav when clicking the menu icon
 var mySidenav = document.getElementById("mySidenav");
 function w3_open() {
@@ -311,10 +402,12 @@ function w3_open() {
         mySidenav.style.display = 'block';
     }
 }
+
 // Close the sidenav with the close button
 function w3_close() {
     mySidenav.style.display = "none";
 }
+
 </script>
 
 </body>
