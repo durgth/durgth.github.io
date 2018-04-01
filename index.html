@@ -42,12 +42,12 @@ img {margin-bottom: -8px;}
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <ul class="w3-navbar w3-white w3-card-2" id="myNavbar">
-    <div class="w3-left w3-hide-small">
+    <div class="w3-left w3-hide-small w3-hide-medium">
       <a href="#home" class="w3-wide"><img src="appImages/logo-tiny.jpg" alt="Saleboat"></a>
     </div>
     
     <!-- Right-sided navbar links -->
-    <div class="w3-right w3-hide-small w3-background-white w3-text-white">
+    <div class="w3-right w3-hide-small w3-hide-medium w3-background-white w3-text-white">
 		<span style="background-color: navy">
 			<a href="#home"><i class="fa fa-home"></i> HOME   </a>
 			<a href="#app"><i class="fa fa-cloud"></i> APP   </a>
@@ -58,7 +58,7 @@ img {margin-bottom: -8px;}
 		</span>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-    <a href="javascript:void(0)" class="w3-right w3-hide-large w3-hide-medium w3-text-white" onclick="w3_open()">
+    <a href="javascript:void(0)" class="w3-right w3-hide-large w3-text-white" onclick="w3_open()">
         <span style="background-color: navy">
         	<i class="fa fa-bars w3-padding-right w3-padding-left"></i>
         </span>
@@ -68,7 +68,7 @@ img {margin-bottom: -8px;}
 
 
 <!-- Sidenav on small screens when clicking the menu icon -->
-<nav class="w3-sidenav w3-indigo w3-card-2 w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidenav">
+<nav class="w3-sidenav w3-indigo w3-card-2 w3-animate-left w3-hide-large" style="display:none" id="mySidenav">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-large w3-padding-16"><i class="fa fa-close"></i>Close</a><br>
   <a href="#home" onclick="w3_close()>"><i class="fa fa-home"></i>  HOME</a><br>
   <a href="#app" onclick="w3_close()"><i class="fa fa-cloud"></i>  APP</a><br>
@@ -94,7 +94,7 @@ img {margin-bottom: -8px;}
 <div class="w3-display-container w3-center w3-white" id="home">  
 <!-- large and medium screens: -->
   
-  <div class="mySlides w3-animate-opacity w3-hide-small">
+  <div class="mySlides w3-animate-opacity w3-hide-small w3-hide-medium">
     <img class="w3-image" src="appImages/app.jpg" alt="Image 1" style="min-width:500px" width="1500" height="1000">
     <div class="w3-display-left w3-padding" style="width:35%">
       <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
@@ -105,7 +105,7 @@ img {margin-bottom: -8px;}
       </div>
     </div>
   </div>
-  <div class="mySlides w3-animate-opacity w3-hide-small">
+  <div class="mySlides w3-animate-opacity w3-hide-small w3-hide-medium">
     <img class="w3-image" src="appImages/app2.jpg" alt="Image 2" style="min-width:500px" width="1500" height="1000">
     <div class="w3-display-left w3-padding" style="width:35%">
       <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
@@ -116,7 +116,7 @@ img {margin-bottom: -8px;}
       </div>
     </div>
   </div>
-  <div class="mySlides w3-animate-opacity w3-hide-small">
+  <div class="mySlides w3-animate-opacity w3-hide-small w3-hide-medium">
     <img class="w3-image" src="appImages/app4.jpg" alt="Image 3" style="min-width:500px" width="1500" height="1000">
     <div class="w3-display-left w3-padding" style="width:35%">
       <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
@@ -127,16 +127,16 @@ img {margin-bottom: -8px;}
       </div>
     </div>
   </div>
-  <a class="w3-button w3-black w3-display-right w3-margin-right w3-round w3-hide-small w3-hover-light-grey" onclick="plusDivs(1)">Take Tour <i class="fa fa-angle-right"></i></a>
+  <a class="w3-button w3-black w3-display-right w3-margin-right w3-round w3-hide-small w3-hide-medium w3-hover-light-grey" onclick="plusDivs(1)">Take Tour <i class="fa fa-angle-right"></i></a>
   
-  <div class="w3-hide-medium w3-hide-large">
+  <div class="w3-hide-large w3-black">
     <div class="mySlidesSmall">
 		<img class="w3-image" src="appImages/app.jpg" alt="Image 1" style="min-width:500px" width="1500" height="1000">
 		<h1 class="w3-xlarge w3-text-red">Sell Your Stuff & Get Paid Instantly</h1>
 		<p>Sell an item and get paid for it all in the same app.</p>
 		<div class = "w3-center">
-  			<a class="w3-button w3-red w3-round w3-hide-large w3-hide-medium" onclick="plusDivsSmall(1)">Take Tour <i class="fa fa-angle-right"></i></a>
-  			<a href="https://goo.gl/forms/OASSwHUqsD8gXOn12" class="w3-button w3-green w3-round w3-hide-large w3-hide-medium"><i class="fa fa-envelope"></i>   Subscribe Now</a>
+  			<a class="w3-button w3-red w3-round" onclick="plusDivsSmall(1)">Take Tour <i class="fa fa-angle-right"></i></a>
+  			<a href="https://goo.gl/forms/OASSwHUqsD8gXOn12" class="w3-button w3-green w3-round"><i class="fa fa-envelope"></i>   Subscribe Now</a>
  		</div>
   	</div>
   	
@@ -145,8 +145,8 @@ img {margin-bottom: -8px;}
 		<h1 class="w3-xlarge w3-text-indigo">Shop & Get Purchases Delivered</h1>
 		<p>Buy an item, relax & let us take care of the pickup and delivery, right to your door.</p>
 		<div class = "w3-center">
-  			<a class="w3-button w3-indigo w3-round w3-hide-large w3-hide-medium" onclick="plusDivsSmall(1)">Take Tour <i class="fa fa-angle-right"></i></a>
-  			<a href="https://goo.gl/forms/OASSwHUqsD8gXOn12" class="w3-button w3-green w3-round w3-hide-large w3-hide-medium"><i class="fa fa-envelope"></i>   Subscribe Now</a>
+  			<a class="w3-button w3-indigo w3-round" onclick="plusDivsSmall(1)">Take Tour <i class="fa fa-angle-right"></i></a>
+  			<a href="https://goo.gl/forms/OASSwHUqsD8gXOn12" class="w3-button w3-green w3-round"><i class="fa fa-envelope"></i>   Subscribe Now</a>
  		</div>
   	</div>
 
@@ -155,10 +155,11 @@ img {margin-bottom: -8px;}
 		<h1 class="w3-xlarge w3-text-green">Make Some Extra Cash</h1>
 		<p>Make a delivery on your way and get paid for it.</p>
 		<div class = "w3-center">
-  			<a class="w3-button w3-green w3-round w3-hide-large w3-hide-medium" onclick="plusDivsSmall(1)">Take Tour <i class="fa fa-angle-right"></i></a>
-  			<a href="https://goo.gl/forms/OASSwHUqsD8gXOn12" class="w3-button w3-yellow w3-round w3-hide-large w3-hide-medium"><i class="fa fa-envelope"></i>   Subscribe Now</a>
+  			<a class="w3-button w3-green w3-round" onclick="plusDivsSmall(1)">Take Tour <i class="fa fa-angle-right"></i></a>
+  			<a href="https://goo.gl/forms/OASSwHUqsD8gXOn12" class="w3-button w3-yellow w3-round"><i class="fa fa-envelope"></i>   Subscribe Now</a>
  		</div>
   	</div>
+  	<br>
   </div>
 </div>
 
@@ -171,14 +172,13 @@ img {margin-bottom: -8px;}
       <p><span class="w3-xlarge">Connecting buyers, sellers, and couriers in New Haven with INSTANT sales and deliveries. </span> <br> <br>Are you a buyer or seller on Yale Free and For Sale tired of coordinating your item's delivery and payment?  Wish you could sit back, relax, and have the item delivered to your door for a small fee?  Or are you a busy student or young professional who wouldn't mind a little extra cash?  Pick up an item near you and make a delivery on your way across New Haven and get paid for it as a courier for Saleboat.</p>
       <p>Subscribe now to try out our beta app and be among the first to join the Saleboat sell, shop & delivery community when we go live.</p>
       
-      <a href="https://goo.gl/forms/OASSwHUqsD8gXOn12" class="w3-button w3-green w3-padding-large w3-section w3-hide-small"><i class="fa fa-envelope"></i>   Subscribe Now</a>
+      <a href="https://goo.gl/forms/OASSwHUqsD8gXOn12" class="w3-button w3-green w3-padding-large w3-section"><i class="fa fa-envelope"></i>   Subscribe Now</a>
 
       <p>App coming soon for <i class="fa fa-android w3-xlarge w3-text-green"></i> <i class="fa fa-apple w3-xlarge"></i> <i class="fa fa-windows w3-xlarge w3-text-blue"></i></p>
     </div>
     <div class="w3-col l4 m6">
-      <img src="appImages/img_app.jpg" class="w3-image w3-right w3-hide-small" width="335" height="471">
-      <div class="w3-center w3-hide-large w3-hide-medium">
-		<a href="https://goo.gl/forms/OASSwHUqsD8gXOn12" class="w3-button w3-block w3-green w3-round"><i class="fa fa-envelope"></i>   Subscribe Now</a>
+      <img src="appImages/img_app.jpg" class="w3-image w3-right w3-hide-small w3-hide-medium" width="335" height="471">
+      <div class="w3-center w3-hide-large">
         <img src="appImages/img_app.jpg" class="w3-image w3-margin-top" width="335" height="471">
       </div>
     </div>
